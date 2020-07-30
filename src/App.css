@@ -1,38 +1,154 @@
 .App {
-  text-align: center;
+    text-align: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
+}
+
+.container {
+    width: 100%;
+    padding-top: 5em;
+    height: 100vh;
+    background: #0575E6;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #021B79, #0575E6);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #021B79, #0575E6);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.board {
+    width: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+    background: #232526;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #000000, #06090a);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0a0b0c, #000000);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.next {
+    color: #fff;
+}
+
+.button {
+    width: 7em;
+    background: transparent;
+    transition: 0.3s;
+    color: #fff;
+    margin: 0.5em;
+    position: relative;
+    box-shadow: 5px 3px 5px 2px rgba(21, 76, 255, 0.7);
+    height: 7em;
+    outline: none;
+    border: 1px solid rgb(24, 2, 124);
+}
+
+.button:focus {
+    box-shadow: 2px 1px 1px 1px rgba(21, 76, 255, 0.7);
+}
+
+.winner {
+    animation: glow 0.5s ease-in-out reverse;
+    animation-iteration-count: infinite;
+    animation-fill-mode: initial;
+}
+
+@keyframes glow {
+    0% {
+        color: #fff;
+    }
+    50% {
+        color: rgb(25, 248, 144);
+    }
+    100% {
+        color: rgb(223, 159, 12);
+    }
+}
+
+h2 {
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 25%;
+    height: 100%;
+    /* border: 1px solid red; */
+    font-size: 3em;
+    text-align: center;
+    /* transform: translate(50%, 30%); */
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: inherit;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.new-game {
+    border: 1px solid rgb(17, 17, 175);
+    width: 10em;
+    box-shadow: 5px 3px 5px 2px rgb(21, 76, 255);
+    text-align: center;
+    margin: 0 auto;
+    transition: box-shadow 0.2s;
+    outline: none;
+    color: #fff;
+    padding: 10px;
+    background-color: transparent;
+}
+
+.new-game:focus {
+    box-shadow: none;
+}
+
+@media screen and (max-width:600px) {
+    .button {
+        width: 6em;
+        margin: 5px;
+        height: 5em;
+        font-size: 0.7em;
+    }
+    h2 {
+        padding-top: 15%;
+    }
 }
